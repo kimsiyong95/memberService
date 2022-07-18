@@ -97,7 +97,7 @@ public class MemberService {
 
 
 
-        return new ResponseDTO().createResponseDTO(SuccessEnum.REFUND, findMember.get().getScrapData());
+        return new ResponseDTO().createResponseDTO(SuccessEnum.REFUND, findMember.get().getMyRefund());
     }
 
 
