@@ -12,7 +12,8 @@ public enum ExceptionEnum {
 
     TOKEN_ERROR(HttpStatus.BAD_REQUEST, "E004", "토큰 오류"),
     
-    NON_AUTHENTICATION_ERROR(HttpStatus.BAD_REQUEST, "E005", "인증되지 않은 사용자");
+    NON_AUTHENTICATION_ERROR(HttpStatus.BAD_REQUEST, "E005", "인증되지 않은 사용자"),
+    NON_PERMIT_ERROR(HttpStatus.BAD_REQUEST, "E006", "허용하지 않은 사용자");
 
     private final HttpStatus status;
     private final String code;

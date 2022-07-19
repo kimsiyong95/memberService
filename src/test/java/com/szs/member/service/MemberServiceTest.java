@@ -46,7 +46,7 @@ class MemberServiceTest {
                         .password("1234")
                         .build();
 
-        when(memberRepository.findByUserIdOrRegNo(any(), any())).thenReturn(createMember());
+        when(memberRepository.findTop1ByUserIdOrRegNo(any(), any())).thenReturn(createMember());
 
         ApiException error = assertThrows(ApiException.class, () -> {
             memberService.siginUp(memberSignUpRequestDTO);

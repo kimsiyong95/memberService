@@ -48,7 +48,7 @@ class MemberRepositoryTest {
     @DisplayName("아이디 또는 주민번호 중복 조회 테스트")
     @Test
     public void findByUserIdOrRegNoTest(){
-        Member findMember = memberRepository.findByUserIdOrRegNo("kimsiyong", "1111111-11111");
+        Member findMember = memberRepository.findTop1ByUserIdOrRegNo("kimsiyong", "1111111-11111");
 
         assertThat("kimsiyong").isEqualTo(findMember.getUserId());
     }

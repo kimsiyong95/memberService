@@ -7,7 +7,9 @@ import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import com.szs.member.common.encryption.AES256;
+import com.szs.member.common.enums.ExceptionEnum;
 import com.szs.member.common.request.MemberSignUpRequestDTO;
+import com.szs.member.common.response.ApiException;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -52,6 +54,16 @@ public class Member {
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
+    }
+
+    public void permitCheck(Map<String, String> map, MemberSignUpRequestDTO memberRequestDTO){
+        if(map.containsKey(memberRequestDTO.getName())){
+            if(map.get(memberRequestDTO.getName()).equals(memberRequestDTO.getRegNo())){
+                return;
+            }
+        }
+
+        throw new ApiException(ExceptionEnum.NON_PERMIT_ERROR);
     }
 
     public void updateScrapData(Map<String, Object> scrapData){
