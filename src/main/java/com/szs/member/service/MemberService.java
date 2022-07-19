@@ -92,11 +92,6 @@ public class MemberService {
         if(!findMember.isPresent())
             throw new ApiException(ExceptionEnum.NON_AUTHENTICATION_ERROR);
 
-
-
-
-
-
         return new ResponseDTO().createResponseDTO(SuccessEnum.REFUND, findMember.get().getMyRefund());
     }
 

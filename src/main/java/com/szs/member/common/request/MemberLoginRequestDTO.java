@@ -7,6 +7,9 @@ import javax.validation.constraints.NotEmpty;
 
 @Getter
 @Setter
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class MemberLoginRequestDTO {
 
     @NotEmpty

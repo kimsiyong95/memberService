@@ -7,6 +7,7 @@ import com.szs.member.common.request.MemberSignUpRequestDTO;
 import com.szs.member.common.response.ApiException;
 import com.szs.member.service.MemberService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
@@ -17,7 +18,7 @@ import java.security.Principal;
 @RestController
 @RequestMapping("/api/v1/szs/")
 @RequiredArgsConstructor
-public class memberRestController {
+public class MemberRestController {
 
     private final MemberService memberService;
 
@@ -27,7 +28,7 @@ public class memberRestController {
         if(bindingResult.hasErrors()){
             throw new ApiException(ExceptionEnum.USER_PARAM_ERROR);
         }
-        return ResponseEntity.ok().body(memberService.siginUp(memberRequestDTO));
+        return ResponseEntity.status(HttpStatus.CREATED).body(memberService.siginUp(memberRequestDTO));
     }
 
     @PostMapping("login")
