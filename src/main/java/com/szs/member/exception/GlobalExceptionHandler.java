@@ -15,7 +15,7 @@ public class GlobalExceptionHandler {
     public ResponseEntity apiExceptionHandler(ApiException e){
         return ResponseEntity.status(e.getError().getStatus())
                 .body(ApiExceptionEntity.builder()
-                        .errorCdoe(e.getError().getCode())
+                        .errorCode(e.getError().getCode())
                         .errorMessage(e.getError().getMessage())
                         .build());
     }
@@ -25,7 +25,7 @@ public class GlobalExceptionHandler {
     public ResponseEntity runtimeExceptionHandler(RuntimeException e){
         return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
                 .body(ApiExceptionEntity.builder()
-                        .errorCdoe(String.valueOf(HttpStatus.INTERNAL_SERVER_ERROR.value()))
+                        .errorCode(String.valueOf(HttpStatus.INTERNAL_SERVER_ERROR.value()))
                         .errorMessage(e.getMessage())
                         .build());
     }

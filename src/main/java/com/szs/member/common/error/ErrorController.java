@@ -1,4 +1,4 @@
-package com.szs.member.controller;
+package com.szs.member.common.error;
 
 
 import com.szs.member.common.enums.ExceptionEnum;
