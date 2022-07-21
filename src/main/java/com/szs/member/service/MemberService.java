@@ -116,6 +116,9 @@ public class MemberService {
                         .bodyValue(param)
                         .retrieve()
                         .bodyToMono(new ParameterizedTypeReference<Map<String, Object>>() {})
+                        .doOnError((throwable -> {
+                            throw new RuntimeException();
+                         }))
                         .block();
     }
 }
