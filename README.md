@@ -6,8 +6,6 @@
 3. 오른쪽 상단에 있는 Authorize 버튼을 통해 복사한 토큰을 입력 후 전역적인 로그인 처리
 4. 그 후 나의 정보 조회 api, 스크랩 조회 api 는 header token 없이 바로 Execute 시 response 조회  
 
-### 요구사항 구현여부 및 구현방법
-
 ##### 공통설정
 
 * 회원가입, 로그인 기능은 security permitAll 설정
